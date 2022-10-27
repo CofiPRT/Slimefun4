@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.tools;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
@@ -26,4 +27,8 @@ public class ExplosivePickaxe extends ExplosiveTool {
         super(itemGroup, item, recipeType, recipe);
     }
 
+    @Override
+    protected int getDamagePerBlock() {
+        return BalancingChanges.EXPLOSIVE_PICKAXE_DURABILITY_COST_PER_BLOCK;
+    }
 }

@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -65,7 +66,8 @@ public class PickaxeOfTheSeeker extends SimpleSlimefunItem<ItemUseHandler> imple
                 p.teleport(loc);
             }
 
-            damageItem(p, e.getItem());
+            for (int i = 0; i < BalancingChanges.PICKAXE_OF_THE_SEEKER_DURABILITY_COST; i++)
+                damageItem(p, e.getItem());
         };
     }
 

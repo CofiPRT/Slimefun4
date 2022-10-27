@@ -3,6 +3,7 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.magical.staves;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -33,7 +34,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.LimitedUseItem;
  */
 public class StormStaff extends LimitedUseItem {
 
-    public static final int MAX_USES = 8;
+    public static final int MAX_USES = BalancingChanges.STORM_STAFF_MAX_USES;
 
     private static final NamespacedKey usageKey = new NamespacedKey(Slimefun.instance(), "stormstaff_usage");
 

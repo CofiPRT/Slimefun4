@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -886,7 +887,7 @@ public final class SlimefunItemSetup {
 
         new Talisman(SlimefunItems.TALISMAN_WISE,
         new ItemStack[] { SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGICAL_GLASS, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, SlimefunItems.TALISMAN_MAGICIAN, SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGICAL_GLASS, SlimefunItems.MAGIC_LUMP_3},
-        false, false, "wise", 20)
+        false, false, "wise", BalancingChanges.TALISMAN_WISE_CHANCE)
         .register(plugin);
 
         new SlimefunItem(itemGroups.resources, SlimefunItems.GILDED_IRON, RecipeType.SMELTERY,

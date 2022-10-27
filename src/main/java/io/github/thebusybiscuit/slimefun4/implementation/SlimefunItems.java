@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -189,7 +190,7 @@ public final class SlimefunItems {
 
     static {
         GRANDMAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
-        GRANDPAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 5);
+        GRANDPAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, BalancingChanges.GRANDPAS_WALKING_STICK_KNOCKBACK);
 
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 2);
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.DURABILITY, 4);
@@ -216,8 +217,8 @@ public final class SlimefunItems {
         HERCULES_PICKAXE.addUnsafeEnchantment(Enchantment.DURABILITY, 5);
         HERCULES_PICKAXE.addUnsafeEnchantment(Enchantment.DIG_SPEED, 3);
 
-        COBALT_PICKAXE.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
-        COBALT_PICKAXE.addUnsafeEnchantment(Enchantment.DIG_SPEED, 6);
+        COBALT_PICKAXE.addUnsafeEnchantment(Enchantment.DURABILITY, BalancingChanges.COBALT_PICKAXE_UNBREAKING);
+        COBALT_PICKAXE.addUnsafeEnchantment(Enchantment.DIG_SPEED, BalancingChanges.COBALT_PICKAXE_EFFICIENCY);
     }
 
     /* Armor */
@@ -307,7 +308,7 @@ public final class SlimefunItems {
     static {
         Map<Enchantment, Integer> cactusEnchs = new HashMap<>();
         cactusEnchs.put(Enchantment.THORNS, 3);
-        cactusEnchs.put(Enchantment.DURABILITY, 6);
+        cactusEnchs.put(Enchantment.DURABILITY, BalancingChanges.CACTUS_ARMOR_UNBREAKING);
 
         CACTUS_HELMET.addUnsafeEnchantments(cactusEnchs);
         CACTUS_CHESTPLATE.addUnsafeEnchantments(cactusEnchs);
@@ -315,8 +316,8 @@ public final class SlimefunItems {
         CACTUS_BOOTS.addUnsafeEnchantments(cactusEnchs);
 
         Map<Enchantment, Integer> damascusEnchs = new HashMap<>();
-        damascusEnchs.put(Enchantment.DURABILITY, 5);
-        damascusEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
+        damascusEnchs.put(Enchantment.DURABILITY, BalancingChanges.DAMASCUS_STEEL_ARMOR_UNBREAKING);
+        damascusEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, BalancingChanges.DAMASCUS_STEEL_ARMOR_PROTECTION);
 
         DAMASCUS_STEEL_HELMET.addUnsafeEnchantments(damascusEnchs);
         DAMASCUS_STEEL_CHESTPLATE.addUnsafeEnchantments(damascusEnchs);
@@ -324,8 +325,8 @@ public final class SlimefunItems {
         DAMASCUS_STEEL_BOOTS.addUnsafeEnchantments(damascusEnchs);
 
         Map<Enchantment, Integer> reinforcedEnchs = new HashMap<>();
-        reinforcedEnchs.put(Enchantment.DURABILITY, 9);
-        reinforcedEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, 9);
+        reinforcedEnchs.put(Enchantment.DURABILITY, BalancingChanges.REINFORCED_ALLOY_ARMOR_UNBREAKING);
+        reinforcedEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, BalancingChanges.REINFORCED_ALLOY_ARMOR_PROTECTION);
 
         REINFORCED_ALLOY_HELMET.addUnsafeEnchantments(reinforcedEnchs);
         REINFORCED_ALLOY_CHESTPLATE.addUnsafeEnchantments(reinforcedEnchs);
@@ -333,21 +334,24 @@ public final class SlimefunItems {
         REINFORCED_ALLOY_BOOTS.addUnsafeEnchantments(reinforcedEnchs);
 
         Map<Enchantment, Integer> gildedEnchs = new HashMap<>();
-        gildedEnchs.put(Enchantment.DURABILITY, 6);
-        gildedEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, 8);
+        gildedEnchs.put(Enchantment.DURABILITY, BalancingChanges.GILDED_IRON_ARMOR_UNBREAKING);
+        gildedEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, BalancingChanges.GILDED_IRON_ARMOR_PROTECTION);
 
         GILDED_IRON_HELMET.addUnsafeEnchantments(gildedEnchs);
         GILDED_IRON_CHESTPLATE.addUnsafeEnchantments(gildedEnchs);
         GILDED_IRON_LEGGINGS.addUnsafeEnchantments(gildedEnchs);
         GILDED_IRON_BOOTS.addUnsafeEnchantments(gildedEnchs);
 
-        GOLDEN_HELMET_12K.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
-        GOLDEN_CHESTPLATE_12K.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
-        GOLDEN_LEGGINGS_12K.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
-        GOLDEN_BOOTS_12K.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+        Map<Enchantment, Integer> golden12kEnchs = new HashMap<>();
+        gildedEnchs.put(Enchantment.DURABILITY, BalancingChanges.GOLDEN_ARMOR_12K_UNBREAKING);
+
+        GOLDEN_HELMET_12K.addUnsafeEnchantments(golden12kEnchs);
+        GOLDEN_CHESTPLATE_12K.addUnsafeEnchantments(golden12kEnchs);
+        GOLDEN_LEGGINGS_12K.addUnsafeEnchantments(golden12kEnchs);
+        GOLDEN_BOOTS_12K.addUnsafeEnchantments(golden12kEnchs);
 
         Map<Enchantment, Integer> slimeEnchs = new HashMap<>();
-        slimeEnchs.put(Enchantment.DURABILITY, 4);
+        slimeEnchs.put(Enchantment.DURABILITY, BalancingChanges.SLIME_ARMOR_STEEL_UNBREAKING);
         slimeEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
 
         SLIME_HELMET_STEEL.addUnsafeEnchantments(slimeEnchs);
@@ -356,11 +360,16 @@ public final class SlimefunItems {
         SLIME_BOOTS_STEEL.addUnsafeEnchantments(slimeEnchs);
 
         Map<Enchantment, Integer> beeEnchs = new HashMap<>();
-        beeEnchs.put(Enchantment.DURABILITY, 4);
+        beeEnchs.put(Enchantment.DURABILITY, BalancingChanges.BEE_ARMOR_UNBREAKING);
         beeEnchs.put(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
 
         BEE_HELMET.addUnsafeEnchantments(beeEnchs);
-        BEE_WINGS.addUnsafeEnchantments(beeEnchs);
+
+        if (BalancingChanges.BEE_WINGS_PROTECTION_ADD)
+            BEE_WINGS.addUnsafeEnchantments(beeEnchs);
+        else
+            BEE_WINGS.addUnsafeEnchantment(Enchantment.DURABILITY, BalancingChanges.BEE_ARMOR_UNBREAKING);
+
         BEE_LEGGINGS.addUnsafeEnchantments(beeEnchs);
         BEE_BOOTS.addUnsafeEnchantments(beeEnchs);
     }
@@ -555,14 +564,14 @@ public final class SlimefunItems {
     public static final SlimefunItemStack TALISMAN_WATER = new SlimefunItemStack("WATER_TALISMAN", Material.EMERALD, "&aTalisman of the Water Breather", "", "&fWhile you have this Talisman", "&fin your Inventory it will", "&fgive you the ability", "&fto breath underwater as", "&fsoon as you start drowning", "&fbut will then be consumed");
     public static final SlimefunItemStack TALISMAN_ANGEL = new SlimefunItemStack("ANGEL_TALISMAN", Material.EMERALD, "&aTalisman of the Angel", "", "&fWhile you have this Talisman", "&fin your Inventory it has a", "&f75% chance to prevent you", "&ffrom taking Fall Damage");
     public static final SlimefunItemStack TALISMAN_FIRE = new SlimefunItemStack("FIRE_TALISMAN", Material.EMERALD, "&aTalisman of the Firefighter", "", "&fWhile you have this Talisman", "&fin your Inventory it will", "&fgive you Fire Resistance", "&fas soon as you start burning", "&fbut will then be consumed");
-    public static final SlimefunItemStack TALISMAN_MAGICIAN = new SlimefunItemStack("MAGICIAN_TALISMAN", Material.EMERALD, "&aTalisman of the Magician", "", "&fWhile you have this Talisman", "&fin your Inventory it gives", "&fyou a 80% Luck Bonus on Enchanting", "&fYou will sometimes get an Extra Enchantment");
+    public static final SlimefunItemStack TALISMAN_MAGICIAN = new SlimefunItemStack("MAGICIAN_TALISMAN", Material.EMERALD, "&aTalisman of the Magician", "", "&fWhile you have this Talisman", "&fin your Inventory it gives", "&fyou a " + BalancingChanges.TALISMAN_MAGICIAN_CHANCE + "% Luck Bonus on Enchanting", "&fYou will sometimes get an Extra Enchantment");
     public static final SlimefunItemStack TALISMAN_TRAVELLER = new SlimefunItemStack("TRAVELLER_TALISMAN", Material.EMERALD, "&aTalisman of the Traveller", "", "&fWhile you have this Talisman", "&fin your Inventory it gives", "&fyou a 60% Chance for a decent", "&fSpeed Buff when you start sprinting");
     public static final SlimefunItemStack TALISMAN_WARRIOR = new SlimefunItemStack("WARRIOR_TALISMAN", Material.EMERALD, "&aTalisman of the Warrior", "", "&fWhile you have this Talisman", "&fin your Inventory it gives", "&fyou Strength III whenever you get hit", "&fbut will then be consumed");
     public static final SlimefunItemStack TALISMAN_KNIGHT = new SlimefunItemStack("KNIGHT_TALISMAN", Material.EMERALD, "&aTalisman of the Knight", "", "&fWhile you have this Talisman", "&fin your Inventory it gives", "&fyou a 30% Chance for 5 Seconds of Regeneration", "&fwhenever You get hit", "&fbut will then be consumed");
     public static final SlimefunItemStack TALISMAN_WHIRLWIND = new SlimefunItemStack("WHIRLWIND_TALISMAN", Material.EMERALD, "&aTalisman of the Whirlwind", "", "&fHaving this Talisman", "&fin your Inventory will reflect", "&f60% of any projectiles fired at you.", "&e&oOnly a thrown Trident can pierce", "&e&othrough this layer of protection");
     public static final SlimefunItemStack TALISMAN_WIZARD = new SlimefunItemStack("WIZARD_TALISMAN", Material.EMERALD, "&aTalisman of the Wizard", "", "&fWhile you have this Talisman", "&fin your Inventory it allows you to", "&fobtain Fortune Level 4/5 however", "&fit also has a chance to lower the", "&fLevel of some Enchantments on your Item");
     public static final SlimefunItemStack TALISMAN_CAVEMAN = new SlimefunItemStack("CAVEMAN_TALISMAN", Material.EMERALD, "&aTalisman of the Caveman", "", "&fWhile you have this Talisman", "&fin your inventory it gives", "&fyou a 50% chance for a decent", "&fHaste buff when you mine any ore");
-    public static final SlimefunItemStack TALISMAN_WISE = new SlimefunItemStack("WISE_TALISMAN", Material.EMERALD, "&aTalisman of the Wise", "", "&fWhile you have this Talisman", "&fin your inventory it gives", "&fyou a 20% chance of doubling", "&fany experience you obtain");
+    public static final SlimefunItemStack TALISMAN_WISE = new SlimefunItemStack("WISE_TALISMAN", Material.EMERALD, "&aTalisman of the Wise", "", "&fWhile you have this Talisman", "&fin your inventory it gives", "&fyou a " + BalancingChanges.TALISMAN_WISE_CHANCE + "% chance of doubling", "&fany experience you obtain");
 
     /* Staves */
     public static final SlimefunItemStack STAFF_ELEMENTAL = new SlimefunItemStack("STAFF_ELEMENTAL", Material.STICK, "&6Elemental Staff");

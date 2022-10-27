@@ -8,6 +8,7 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -47,7 +48,7 @@ public class SeismicAxe extends SimpleSlimefunItem<ItemUseHandler> implements No
 
     private static final float STRENGTH = 1.2F;
     private static final float HEIGHT = 0.9F;
-    private static final float DAMAGE = 6;
+    private static final float DAMAGE = BalancingChanges.SEISMIC_AXE_DAMAGE;
     private static final float MIN_PLAYER_DISTANCE = 0.2F;
     private static final float MAX_GROUND_DISTANCE = 1.5F;
     private static final int RANGE = 10;
@@ -92,9 +93,8 @@ public class SeismicAxe extends SimpleSlimefunItem<ItemUseHandler> implements No
                 }
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < BalancingChanges.SEISMIC_AXE_DURABILITY_COST; i++)
                 damageItem(p, e.getItem());
-            }
         };
     }
 

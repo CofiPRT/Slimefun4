@@ -8,6 +8,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -53,12 +54,13 @@ public class ArmorTask implements Runnable {
         this.radioactiveFire = radioactiveFire;
 
         Set<PotionEffect> effects = new HashSet<>();
-        effects.add(new PotionEffect(PotionEffectType.WITHER, 400, 2));
-        effects.add(new PotionEffect(PotionEffectType.BLINDNESS, 400, 3));
-        effects.add(new PotionEffect(PotionEffectType.CONFUSION, 400, 3));
-        effects.add(new PotionEffect(PotionEffectType.WEAKNESS, 400, 2));
-        effects.add(new PotionEffect(PotionEffectType.SLOW, 400, 1));
-        effects.add(new PotionEffect(PotionEffectType.SLOW_DIGGING, 400, 1));
+        effects.add(new PotionEffect(PotionEffectType.WITHER, 400, BalancingChanges.RADIATION_WITHER - 1));
+        if (BalancingChanges.RADIATION_BLINDNESS_ADD)
+            effects.add(new PotionEffect(PotionEffectType.BLINDNESS, 400, 3));
+        effects.add(new PotionEffect(PotionEffectType.CONFUSION, 400, BalancingChanges.RADIATION_NAUSEA - 1));
+        effects.add(new PotionEffect(PotionEffectType.WEAKNESS, 400, BalancingChanges.RADIATION_WEAKNESS - 1));
+        effects.add(new PotionEffect(PotionEffectType.SLOW, 400, BalancingChanges.RADIATION_SLOWNESS - 1));
+        effects.add(new PotionEffect(PotionEffectType.SLOW_DIGGING, 400, BalancingChanges.RADIATION_MINING_FATIGUE - 1));
         radiationEffects = Collections.unmodifiableSet(effects);
     }
 

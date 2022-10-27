@@ -11,6 +11,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.BalancingChanges;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -36,7 +37,7 @@ public class MagicianTalisman extends Talisman {
 
     @ParametersAreNonnullByDefault
     public MagicianTalisman(SlimefunItemStack item, ItemStack[] recipe) {
-        super(item, recipe, false, false, "magician", 80);
+        super(item, recipe, false, false, "magician", BalancingChanges.TALISMAN_MAGICIAN_CHANCE);
 
         addItemSetting(allowEnchantmentBooks);
 

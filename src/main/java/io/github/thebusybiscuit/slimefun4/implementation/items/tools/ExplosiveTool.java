@@ -176,7 +176,12 @@ public class ExplosiveTool extends SimpleSlimefunItem<ToolUseHandler> implements
             b.breakNaturally(item);
         }
 
-        damageItem(p, item);
+        for (int i = 0; i < getDamagePerBlock(); i++)
+            damageItem(p, item);
+    }
+
+    protected int getDamagePerBlock() {
+        return 1;
     }
 
 }
